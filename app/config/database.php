@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'host' => '192.168.99.100',
-    'dbname' => 'bit',
-    'username' => 'bit',
-    'password' => 'secret-NONE',
-    'port' => 3307
+    'host' => getenv('MYSQL_HOST'),
+    'dbname' => getenv('MYSQL_DATABASE'),
+    'username' => getenv('MYSQL_USER'),
+    'password' => getenv('MYSQL_PASSWORD'),
+    'port' => getenv('MYSQL_PORT'),
 ];

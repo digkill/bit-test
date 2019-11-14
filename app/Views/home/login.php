@@ -1,10 +1,10 @@
 <form method="POST">
     <h2>Авторизоваться</h2>
-    <label for="inputUsername" class="sr-only">Username:</label>
-    <input name="username" id="inputUsername" class="form-control" placeholder="Username" required autofocus
+    <label for="inputUsername">Username:</label>
+    <input name="username" id="inputUsername" placeholder="Username" required autofocus
            value="<?php echo $username; ?>">
     <label for="inputPassword" class="sr-only">Password</label>
-    <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+    <input name="password" type="password" id="inputPassword" placeholder="Password" required>
 
     <?php if (!empty($error)) { ?>
         <?php echo $error; ?>

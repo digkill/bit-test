@@ -12,7 +12,8 @@
   "require": {
     "php": ">=7.1.0",
     "ext-mbstring": "*",
-    "ext-mysqli": "*"
+    "ext-mysqli": "*",
+    "symfony/dotenv": "^4.3"
   },
   "autoload": {
     "psr-4": {
