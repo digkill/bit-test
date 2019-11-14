@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+
+  web:
+    container_name: bit_web
+    build: ./deploy/php
+    expose:
+      - "80"
+    ports:
+      - 8010:80
+    volumes:
+      - ./:/var/www/html
+      - ./logs/apache2:/var/log/apache2
+      - ./deploy/000-default.conf:/etc/apache2/sites-available/000-default.conf
+
+    links:
+      - mariadb
+
+  mariadb:
+    container_name: bit_mariadb
+    build: ./deploy/mariadb/
+    environment:
+      MYSQL_DATABASE: bit
+      MYSQL_USER: bit
+      MYSQL_PASSWORD: secret-NONE
+      MYSQL_ROOT_PASSWORD: secret-NONE
+    ports:
+      - 3307:3306
+    volumes:
+      - ./:/build
+      - ./deploy/migrations:/docker-entrypoint-initdb.d
+      - bit_mysqldata:/var/lib/mysql
+    restart: always
+
+volumes:
+  bit_mysqldata:
+    driver: local

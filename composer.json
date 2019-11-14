@@ -1,0 +1,25 @@
+{
+  "name": "Test example for bit",
+  "authors": [
+    {
+      "name": "Vitaliy Edifanov",
+      "email": "vitaliy@ediafnov.com"
+    }
+  ],
+  "config": {
+    "sort-packages": true
+  },
+  "require": {
+    "php": ">=7.1.0",
+    "ext-mbstring": "*",
+    "ext-mysqli": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app"
+    }
+  },
+  "scripts": {
+    "serve": "php -S 0.0.0.0:8000 -t public"
+  }
+}

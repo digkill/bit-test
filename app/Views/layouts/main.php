@@ -1,0 +1,6 @@
+<?php
+/**
+ * @var $content
+ */
+?>
+<?= $content ?>
